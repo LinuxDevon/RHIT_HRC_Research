@@ -11,9 +11,9 @@ Author: Devon Adair
 Last Modified Date: 10/31/2016
 '''
 
-import tkinter
-from tkinter import *
-from tkinter import ttk
+import Tkinter
+from Tkinter import *
+import ttk
 
 # Array to hold all of the boxes in
 box = []
@@ -66,7 +66,6 @@ def start(canvas):
 def box_removal(box, data, canvas):
     number = int(data.box.get())
 
-
     canvas.delete(box[number])
 
 
@@ -74,7 +73,7 @@ def main():
     data = Data()
 
     # Tinker is being defined and the frames are being set up
-    root = tkinter.Tk()
+    root = Tkinter.Tk()
     main_frame = ttk.Frame(root, padding=(25, 25))
     secondary_frame = ttk.Frame(root, padding=(25, 25))
     main_frame.grid(row=0, column=0)
@@ -95,7 +94,7 @@ def main():
     box_entry = ttk.Entry(secondary_frame, width=20)
     box_entry.grid(row=2, column=0, sticky=E)
 
-    data.box = tkinter.StringVar()
+    data.box = Tkinter.StringVar()
     box_entry['textvariable'] = data.box
 
     # The canvas for the board and grid of boxes
